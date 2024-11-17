@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Task Scheduler</h1>
+    </header>
+    <main>
+      <section id="task-form">
+        <h5>Add New Task</h5>
+        <form id="schedule-form">
+          <input type="text" id="task-name" placeholder="Task Name" required />
+          <label for="task-date">Date:</label>
+          <input type="date" id="task-date" required />
+          <label for="task-time">Time:</label>
+          <input type="time" id="task-time" required />
+          <label for="recurrence">Repeat:</label>
+          <select id="recurreence">
+            <option value="none">None</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">monthly</option>
+          </select>
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+      <section id="view-controls">
+        <h2>view schedule</h2>
+        <button id="daily-view">Daily</button>
+        <button id="weekly-view">Weekly</button>
+        <button id="monthly-view">Monthly</button>
+      </section>
+      <section id="calendar-view">
+        <h2>Calendar</h2>
+        <div id="calendar"></div>
+      </section>
+    </main>
+  </body>
+</html>
