@@ -10,36 +10,44 @@
   <body>
     <header>
       <h1>Task Scheduler</h1>
+      <div id="bell-container">
+        <img id="bell" src="./image/bell icon.webp" alt="notification bell" />
+        <span id="notification-count" style="display: none">0</span>
+      </div>
     </header>
+
     <main>
-      <section id="task-form">
-        <h5>Add New Task</h5>
-        <form id="schedule-form">
-          <input type="text" id="task-name" placeholder="Task Name" required />
-          <label for="task-date">Date:</label>
-          <input type="date" id="task-date" required />
-          <label for="task-time">Time:</label>
-          <input type="time" id="task-time" required />
-          <label for="recurrence">Repeat:</label>
-          <select id="recurreence">
-            <option value="none">None</option>
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
-            <option value="monthly">monthly</option>
-          </select>
-          <button type="submit">Add Task</button>
-        </form>
-      </section>
-      <section id="view-controls">
-        <h2>view schedule</h2>
-        <button id="daily-view">Daily</button>
-        <button id="weekly-view">Weekly</button>
-        <button id="monthly-view">Monthly</button>
-      </section>
-      <section id="calendar-view">
-        <h2>Calendar</h2>
+      <div id="Todo-form">
+        <div id="task-form">
+          <form id="schedule-form">
+            <label for="task-name">Task Name:</label>
+            <input
+              type="text"
+              id="task-name"
+              placeholder="Task Name"
+              required
+            />
+
+            <label for="task-date">Date:</label>
+            <input type="date" id="task-date" required />
+
+            <label for="task-time">Time:</label>
+            <input type="time" id="task-time" required />
+
+            <button type="submit">Add Task</button>
+          </form>
+        </div>
+        <!-- <div id="view-controls"> -->
+        <div>
+          <h2>view schedule</h2>
+          <button id="daily-view">Daily</button>
+          <button id="weekly-view">Weekly</button>
+          <button id="monthly-view">Monthly</button>
+        </div>
+        <!-- <div id="calendar-view">
+        <h2>Calendar</h2> -->
         <div id="calendar"></div>
-      </section>
+      </div>
     </main>
   </body>
 </html>
