@@ -1,33 +1,59 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
 header {
-  background: #cfc1c9;
+  background: rgba(207, 193, 201, 0.9);
+  backdrop-filter: blur(10px);
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  color: #030202;
-  text-align: center;
-  padding: 20px 25px;
+  align-items: center;
+  width: 100%;
+  padding: 15px 25px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c2c2c;
 }
 
 main {
+  width: 90%;
   max-width: 800px;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 20px;
-  background: white;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease-in-out;
+}
+main:hover {
+  transform: translateY(-5px);
+}
+#Todo-form {
+  padding: 20px;
+  border: 1px solid #8a6fc5;
+  background: rgba(238, 243, 221, 0.9);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #calendar {
@@ -35,54 +61,62 @@ main {
 }
 
 .task {
-  background: #f4f4f4;
+  background: rgba(244, 244, 244, 0.9);
   padding: 1rem;
   margin: 0.5rem 0;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
 }
 .task:hover {
   background: #f0e8e8;
+  transform: scale(1.02);
 }
 .task button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #e0e0e0;
-  color: #333;
-  border: 1px solid #aaa;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 .task button:hover {
   background-color: #ccc;
 }
-
-.delete-button:hover {
-  background-color: rgb(239, 83, 83);
+.task .delete-button {
+  background-color: #e57373;
+  color: white;
 }
-#Todo-form {
-  padding: 25px;
-  border: 1px solid #9990d1;
-  background-color: #eef3dd;
-  border-radius: 8px;
-  margin-bottom: 20px;
+
+.task .delete-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+}
+.save-button {
+  background-color: #4caf50;
+  color: white;
 }
 .save-button:hover {
   background-color: green;
 }
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
 .cancel-button:hover {
-  background-color: red;
+  background-color: #d32f2f;
 }
 #bell-container {
   position: relative;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 #bell {
-  width: 40px;
+  width: 50px;
 }
 #notification-count {
   position: absolute;
@@ -102,9 +136,14 @@ main {
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
+.view-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
 .view-buttons button {
-  padding: 8px 15px;
-  margin: 5px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   background-color: #d190b7;
@@ -115,14 +154,14 @@ main {
 }
 
 .view-buttons button:hover {
-  background-color: #b37498;
+  background-color: #8a6fc5;
+  transform: scale(1.05);
 }
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
   main {
     padding: 15px;
   }
-
   header {
     flex-direction: column;
     text-align: center;
@@ -136,5 +175,10 @@ main {
   .task button {
     margin-top: 10px;
     margin-left: 0;
+  }
+
+  .view-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }
