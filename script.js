@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //Add on Edit button
       const editButton = document.createElement("button");
       editButton.textContent = "Edit";
-      // editButton.className = "edit-button";
+      editButton.className = "edit-button";
       editButton.addEventListener("click", () => editTask(index));
       taskElem.appendChild(editButton);
 
@@ -95,11 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
     notificationCount.textContent = "0"; //Reset count to 0
     notificationCount.style.display = "none"; //Hide the count
     bell.classList.remove("notify"); //Remove notification highlight
-
-    //Optionally can add another notification here
-    // if (Notification.permission === "granted") {
-    //   new Notification("You cleared you notifications");
-    // }
   });
 
   //Add a task
@@ -132,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskElem = calendar.children[index]; //Get the task element
 
     //clear the current task content
-    taskElem.innerHTML = "";
+    // taskElem.innerHTML = "";
 
     //create input fields for task details
     const nameInput = document.createElement("input");

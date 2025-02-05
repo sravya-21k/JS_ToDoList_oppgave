@@ -1,29 +1,35 @@
+/* General Body Styling */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: linear-gradient(to right, #ece9e6, #ffffff);
+  background: linear-gradient(135deg, #d4e7f7 10%, #f9c5b6 100%);
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  background-size: cover;
 }
 
+/* Header Section */
 header {
-  background: rgba(207, 193, 201, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(93, 132, 236, 0.7);
+  backdrop-filter: blur(10px); /* Soft blur effect */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
   width: 100%;
-  padding: 15px 25px;
+  padding: 15px 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
+/* Header Title */
 header h1 {
   margin: 0;
   font-size: 2rem;
@@ -31,50 +37,62 @@ header h1 {
   color: #2c2c2c;
 }
 
+/* Main Content */
 main {
   width: 90%;
   max-width: 800px;
-  margin: 30px auto;
+  margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9); /* Light and clean background */
   border-radius: 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease-in-out;
 }
+
+/* Hover effect for Main Content */
 main:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Slight hover effect */
 }
+
+/* Todo Form */
 #Todo-form {
   padding: 20px;
-  border: 1px solid #8a6fc5;
-  background: rgba(238, 243, 221, 0.9);
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border: 1px solid #ff8a65; /* Brighter border */
+  background: rgba(255, 241, 224, 0.9);
+  border-radius: 12px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+/* Task List */
 #calendar {
   margin-top: 20px;
 }
 
+/* Individual Task Styling */
 .task {
   background: rgba(244, 244, 244, 0.9);
   padding: 1rem;
   margin: 0.5rem 0;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+
+  gap: 50px;
 }
+
+/* Hover Effect for Tasks */
 .task:hover {
   background: #f0e8e8;
   transform: scale(1.02);
 }
+/* Buttons inside Tasks */
 .task button {
   padding: 8px 12px;
   border: none;
@@ -82,47 +100,78 @@ main:hover {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-right: 20px;
 }
+
+/* Hover Effect for Task Buttons */
 .task button:hover {
-  background-color: #ccc;
+  background-color: #ffb74d; /* Brighter yellow on hover */
 }
+
+/* Delete Button Styling */
 .task .delete-button {
-  background-color: #e57373;
+  background-color: #ff7043; /* Vibrant red-orange */
   color: white;
 }
 
 .task .delete-button:hover {
-  background-color: #d32f2f;
-  transform: scale(1.1);
+  background-color: #e64a19; /* Slightly darker on hover */
+  transform: scale(1.1); /* Slight enlarge on hover */
 }
+
+/* Save Button Styling */
 .save-button {
-  background-color: #4caf50;
+  background-color: #66bb6a; /* Fresh green */
   color: white;
 }
+
 .save-button:hover {
-  background-color: green;
+  background-color: #388e3c; /* Darker green on hover */
 }
+
+/* Cancel Button Styling */
 .cancel-button {
-  background-color: #f44336;
+  background-color: #ff5252; /* Bright red */
   color: white;
 }
 
 .cancel-button:hover {
-  background-color: #d32f2f;
+  background-color: #d32f2f; /* Darker red on hover */
 }
+.task .edit-button {
+  background-color: #8a6fc5;
+  color: white;
+  display: flex;
+  justify-content: end;
+  margin-left: 20px;
+}
+
+.task .edit-button:hover {
+  background-color: #6a4fa2;
+}
+
+/* Bell Icon Container */
 #bell-container {
   position: relative;
   cursor: pointer;
+}
+
+#bell {
+  width: 30px; /* Slightly smaller bell */
+  color: #444; /* Neutral bell color */
+}
+
+#bell-container:hover {
+  transform: scale(1.1); /* Bell enlarges slightly on hover */
   transition: transform 0.2s ease;
 }
-#bell {
-  width: 50px;
-}
+
+/* Notification Badge Styling */
 #notification-count {
   position: absolute;
   top: -5px;
   right: -10px;
-  background: red;
+  background: #ff4081; /* Brighter pink for notification badge */
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -130,18 +179,22 @@ main:hover {
   text-align: center;
   line-height: 20px;
   font-size: 12px;
-  display: none;
+  display: none; /* Initially hidden */
 }
-#bell-container:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
+
+/* Show Notification Count on Bell Click */
+#bell-container.notify + #notification-count {
+  display: block;
 }
+
+/* View Buttons Section */
 .view-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
+
 .view-buttons button {
   padding: 10px 15px;
   border: none;
@@ -157,11 +210,13 @@ main:hover {
   background-color: #8a6fc5;
   transform: scale(1.05);
 }
+
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
   main {
     padding: 15px;
   }
+
   header {
     flex-direction: column;
     text-align: center;
